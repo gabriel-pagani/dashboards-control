@@ -1,1 +1,55 @@
-# django-app
+# Descrição
+Sistema de gerenciamento de dashboards
+
+# Pré-requisitos
+- Python 3.13+
+- Windows 11+
+
+# Instalação
+- Clone o repositório
+```bash
+git clone https://github.com/gabriel-pagani/dashboards-app.git
+```
+- Entre na pasta clonada
+```powershell
+cd dashboards-app
+```
+- Crie um ambiente virtual
+```powershell
+python -m venv venv
+```
+- Ative o ambiente virtual
+```powershell
+venv\Scripts\activate
+```
+- Instale as dependências
+```powershell
+pip install -r requirements.txt
+```
+
+# Configuração
+
+# Estrutura do Projeto
+```
+projeto/
+├── app/
+├── project/
+├── venv/
+├── .gitignore
+├── LICENSE
+├── manage.py
+├── README.md
+└── requirements.txt
+```
+
+# Mode de Uso
+- Execulte o seguinte comando no terminal
+```powershell
+python manage.py runserver
+```
+
+# Licença 
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/gabriel-pagani/sistema-de-emprestimos/blob/master/LICENSE) para mais detalhes. A Licença MIT é uma licença de software livre que permite o uso, cópia, modificação e distribuição do código, desde que incluída a nota de direitos autorais e a permissão original.
+
+# Contato 
+Email - gabrielpaganidesouza@gmail.com
