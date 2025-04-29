@@ -28,6 +28,11 @@ pip install -r requirements.txt
 ```
 
 # Configuração
+Na pasta dashboards-app crie o arquivo ".env". Dentro do arquivo adicione o seguinte conteúdo
+```
+METABASE_SITE_URL = 'https://metabase.seudominio.com'
+METABASE_SECRET_KEY = 'sua-chave-metabase'
+```
 
 # Estrutura do Projeto
 ```
@@ -35,6 +40,7 @@ projeto/
 ├── app/
 ├── project/
 ├── venv/
+├── .env
 ├── .gitignore
 ├── LICENSE
 ├── manage.py
@@ -49,7 +55,7 @@ python manage.py runserver
 ```
 
 # Licença 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/gabriel-pagani/sistema-de-emprestimos/blob/master/LICENSE) para mais detalhes. A Licença MIT é uma licença de software livre que permite o uso, cópia, modificação e distribuição do código, desde que incluída a nota de direitos autorais e a permissão original.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/gabriel-pagani/dashboards-app/blob/main/LICENSE) para mais detalhes. A Licença MIT é uma licença de software livre que permite o uso, cópia, modificação e distribuição do código, desde que incluída a nota de direitos autorais e a permissão original.
 
 # Contato 
 Email - gabrielpaganidesouza@gmail.com
