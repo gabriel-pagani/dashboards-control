@@ -9,11 +9,3 @@ def home(request):
         'index.html',
         {'dashboard': generate_dashboard_url(38)}
     )
-
-
-def users(request):
-    return HttpResponse('users!!!')
-
-
-def dashboards(request):
-    return HttpResponse('dashboards!!!')
