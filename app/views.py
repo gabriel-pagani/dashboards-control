@@ -3,7 +3,10 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('home!!!')
+    return render(
+        request,
+        'home.html'
+    )
 
 
 def users(request):
