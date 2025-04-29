@@ -1,13 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Título</title>
+        <title>Dashboard Metabase</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        <h1>App</h1>
+        <div class="container">
+            <div class="container-dashboard">
+                <iframe 
+                    src="{{ dashboard }}" 
+                    frameborder="0"
+                    allowtransparency
+                ></iframe>
+            </div>
+        </div>
+        <script>
+            setTimeout(function() {
+                window.location.reload();
+            }, 5 * 60 * 1000);
+        </script>
     </body>
 </html>
