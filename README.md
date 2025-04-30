@@ -27,6 +27,15 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+- Aplique as migrações
+```powershell
+python .\manage.py migrate
+```
+- Crie um super usuário
+```powershell
+python .\manage.py createsuperuser
+```
+
 # Configuração
 Na pasta dashboards-app crie o arquivo ".env". Dentro do arquivo adicione o seguinte conteúdo
 ```

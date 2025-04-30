@@ -19,9 +19,9 @@
     <hr>
     <nav class="dashboard-nav">
       {% if dashboard_urls %}
-        {% for dash in dashboard_urls %}
-          <button class="dash-link" data-url="{{ dash.url }}">
-            <i class="bi bi-bar-chart me-2"></i> Dashboard {{ dash.id }}
+        {% for dashboard in dashboard_urls %}
+          <button class="dash-link" data-url="{{ dashboard.url }}">
+            <i class="bi bi-bar-chart me-2"></i>{{ dashboard.titulo }}
           </button>
         {% endfor %}
       {% else %}

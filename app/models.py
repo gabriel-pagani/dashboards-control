@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Dashboard(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='dashboards')
-    dashboard_id = models.IntegerField()
+    titulo = models.CharField(max_length=100)
+    setor = models.CharField(max_length=100)
+    codigo = models.IntegerField()
+    usuarios = models.ManyToManyField(User, related_name='dashboards')
 
-    def __str__(self):
-        return f'Dashboard {self.dashboard_id} de {self.user.username}'
+    def __str__(self) -> str:
+        return self.titulo

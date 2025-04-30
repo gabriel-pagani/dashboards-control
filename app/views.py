@@ -7,9 +7,10 @@ from .utils.metabase import generate_dashboard_url
 def home(request):
     dashboard_urls = [
         {
-            'id': dash.dashboard_id,
-            'url': generate_dashboard_url(dash.dashboard_id)
+            'titulo': dashboard.titulo,
+            'setor': dashboard.setor,
+            'url': generate_dashboard_url(dashboard.codigo)
         }
-        for dash in request.user.dashboards.all()
+        for dashboard in request.user.dashboards.all()
     ]
     return render(request, 'index.html', {'dashboard_urls': dashboard_urls})
