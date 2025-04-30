@@ -14,8 +14,9 @@
 <div class="layout">
   <aside class="sidebar">
     <div class="logo">
-      <span>Painel de Controle</span>
+      <img src="{% static 'images/logo.png' %}" class="img-fluid">
     </div>
+    <hr>
     <nav class="dashboard-nav">
       {% if dashboard_urls %}
         {% for dash in dashboard_urls %}
@@ -52,6 +53,10 @@
       iframe.src = url;
     });
   });
+
+  setInterval(() => {
+    location.reload();
+  }, 600000);
 </script>
 </body>
 </html>
