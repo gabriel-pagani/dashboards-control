@@ -15,6 +15,11 @@
     <div class="login-container text-center">
         <h1 class="mb-4">Entrar</h1>
         <form method="post" novalidate>
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                Usuário ou senha incorretos. Por favor, tente novamente.
+            </div>
+            {% endif %}
             {% csrf_token %}
             <div class="mb-3 text-start">
                 <label for="id_username" class="form-label">Usuário</label>
