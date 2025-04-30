@@ -21,16 +21,29 @@
     </div>
     <hr>
     <nav class="dashboard-nav">
-      {% if dashboard_urls %}
-        {% for dashboard in dashboard_urls %}
-          <button class="dash-link" data-url="{{ dashboard.url }}">
-            <i class="bi bi-bar-chart me-2"></i>{{ dashboard.titulo }}
-          </button>
+      {% if dados|length > 0 %}
+        {% for setor, dashboards in dados.items %}
+          <div class="mb-3">
+            <button class="setor-toggle text-white-50 bg-transparent border-0 w-100 text-start d-flex align-items-center justify-content-between" data-target="{{ setor|slugify }}">
+              <span class="text-uppercase">{{ setor }}</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>           
+            <div id="{{ setor|slugify }}" class="setor-panel mt-2">
+              {% for dashboard in dashboards %}
+                <button class="dash-link" data-url="{{ dashboard.url }}">
+                  <i class="bi bi-bar-chart me-2"></i>{{ dashboard.titulo }}
+                </button>
+              {% endfor %}
+            </div>
+          </div>
         {% endfor %}
       {% else %}
-        <p class="text-muted small">Nenhum dashboard.</p>
+      <div class="alert alert-warning d-flex align-items-center mt-4" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        Você não tem acesso. Entre em contato com o administrador.
+      </div>
       {% endif %}
-    </nav>
+    </nav>       
     <div class="user-section">
       <i class="bi bi-person-circle me-2"></i>
       {{ user.username }}
@@ -41,25 +54,42 @@
       </a>
     </div>
   </aside>
-
   <main class="dashboard-view">
     <iframe id="dashboardFrame" src="{% if dashboard_urls %}{{ dashboard_urls.0.url }}{% endif %}" frameborder="0"></iframe>
   </main>
 </div>
 <script>
+  // Trocar dashboards
   const buttons = document.querySelectorAll('.dash-link');
   const iframe = document.getElementById('dashboardFrame');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const url = btn.getAttribute('data-url');
-      iframe.src = url;
+      iframe.src = btn.getAttribute('data-url');
     });
   });
 
-  setInterval(() => {
-    location.reload();
-  }, 600000);
+  // Recolher/expandir setores
+  const setorToggles = document.querySelectorAll('.setor-toggle');
+  setorToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.getAttribute('data-target');
+      const panel = document.getElementById(targetId);
+      const icon = toggle.querySelector('i');
+
+      if (panel.style.display === 'none') {
+        panel.style.display = 'block';
+        icon.classList.remove('bi-chevron-right');
+        icon.classList.add('bi-chevron-down');
+      } else {
+        panel.style.display = 'none';
+        icon.classList.remove('bi-chevron-down');
+        icon.classList.add('bi-chevron-right');
+      }
+    });
+  });
+
+  setInterval(() => location.reload(), 600000);
 </script>
 </body>
 </html>

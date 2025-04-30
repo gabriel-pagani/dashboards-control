@@ -5,12 +5,15 @@ from .utils.metabase import generate_dashboard_url
 
 @login_required
 def home(request):
-    dashboard_urls = [
-        {
-            'titulo': dashboard.titulo,
-            'setor': dashboard.setor,
-            'url': generate_dashboard_url(dashboard.codigo)
-        }
-        for dashboard in request.user.dashboards.all()
-    ]
-    return render(request, 'index.html', {'dashboard_urls': dashboard_urls})
+    dados = dict()
+
+    for dashboard in request.user.dashboards.all():
+        setor = dashboard.setor
+        dados.setdefault(setor, []).append(
+            {
+                'titulo': dashboard.titulo,
+                'url': generate_dashboard_url(dashboard.codigo)
+            }
+        )
+
+    return render(request, 'index.html', {'dados': dados})
