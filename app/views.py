@@ -17,4 +17,4 @@ def home(request):
             }
         )
 
-    return render(request, 'index.html', {'dados': dados})
+    return render(request, 'main.html', {'dados': dados})
