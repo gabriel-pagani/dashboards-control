@@ -126,3 +126,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Redirect after login/logout
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+try:
+    from project.local_settings import *
+except ImportError:
+    ...
