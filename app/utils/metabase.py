@@ -16,7 +16,7 @@ def generate_dashboard_url(dashboard_id):
     payload = {
         "resource": {"dashboard": dashboard_id},
         "params": {},
-        "exp": round(time.time()) + (60 * 5)
+        "exp": round(time.time()) + (60 * 60)
     }
 
     token = jwt.encode(payload, os.getenv(
@@ -27,7 +27,7 @@ def generate_dashboard_url(dashboard_id):
     # Atualiza o cache
     token_cache[dashboard_id] = {
         "url": url,
-        "exp": round(time.time()) + (60 * 5)
+        "exp": round(time.time()) + (60 * 60)
     }
 
     return url

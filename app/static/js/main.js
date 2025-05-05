@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Recolher/expandir setores na navegação
     const setorToggles = document.querySelectorAll('.setor-toggle');
+    
+    // Inicializa todos os painéis como ocultos
+    document.querySelectorAll('.setor-panel').forEach(panel => {
+        panel.style.display = 'none';
+    });
+    
+    // Atualiza os ícones para mostrar que estão minimizados
+    document.querySelectorAll('.setor-toggle i').forEach(icon => {
+        icon.classList.remove('bi-chevron-down');
+        icon.classList.add('bi-chevron-right');
+    });
+    
     setorToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const targetId = toggle.getAttribute('data-target');
@@ -65,6 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Recarregar a página a cada 5 minutos (300000 ms)
-    setInterval(() => location.reload(), 300000);
+    // Recarregar a página a cada 60 minutos
+    setInterval(() => location.reload(), (1000 * 60 * 60));
 });
