@@ -52,4 +52,4 @@ class Dashboard(models.Model):
         return self.titulo
 
     class Meta:
-        ordering = ['setor']
+        ordering = ['setor', 'titulo']
