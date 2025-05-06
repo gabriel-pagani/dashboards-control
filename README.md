@@ -8,11 +8,11 @@ Sistema de gerenciamento de dashboards
 # Instalação
 - Clone o repositório
 ```bash
-git clone https://github.com/gabriel-pagani/dashboards-app.git
+git clone https://github.com/gabriel-pagani/dashboards-control.git
 ```
 - Entre na pasta clonada
 ```powershell
-cd dashboards-app
+cd dashboards-control
 ```
 - Crie um ambiente virtual
 ```powershell
@@ -37,7 +37,7 @@ python .\manage.py createsuperuser
 ```
 
 # Configuração
-Na pasta dashboards-app crie o arquivo ".env". Dentro do arquivo adicione o seguinte conteúdo
+Na pasta dashboards-control crie o arquivo ".env". Dentro do arquivo adicione o seguinte conteúdo
 ```
 METABASE_SITE_URL = 'https://metabase.seudominio.com'
 METABASE_SECRET_KEY = 'sua-chave-metabase'
@@ -64,7 +64,7 @@ python manage.py runserver
 ```
 
 # Licença 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/gabriel-pagani/dashboards-app/blob/main/LICENSE) para mais detalhes. A Licença MIT é uma licença de software livre que permite o uso, cópia, modificação e distribuição do código, desde que incluída a nota de direitos autorais e a permissão original.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/gabriel-pagani/dashboards-control/blob/main/LICENSE) para mais detalhes. A Licença MIT é uma licença de software livre que permite o uso, cópia, modificação e distribuição do código, desde que incluída a nota de direitos autorais e a permissão original.
 
 # Contato 
 Email - gabrielpaganidesouza@gmail.com
