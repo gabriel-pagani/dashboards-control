@@ -7,32 +7,31 @@ Sistema de gerenciamento de dashboards
 
 # Instalação
 - Clone o repositório
-```bash
+```
 git clone https://github.com/gabriel-pagani/dashboards-control.git
 ```
 - Entre na pasta clonada
-```powershell
+```
 cd dashboards-control
 ```
 - Crie um ambiente virtual
-```powershell
+```
 python -m venv venv
 ```
 - Ative o ambiente virtual
-```powershell
+```
 venv\Scripts\activate
 ```
 - Instale as dependências
-```powershell
+```
 pip install -r requirements.txt
 ```
-
 - Aplique as migrações
-```powershell
+```
 python .\manage.py migrate
 ```
 - Crie um super usuário
-```powershell
+```
 python .\manage.py createsuperuser
 ```
 
@@ -60,7 +59,7 @@ projeto/
 
 # Mode de Uso
 - Execulte o seguinte comando no terminal
-```powershell
+```
 python manage.py runserver
 ```
 
