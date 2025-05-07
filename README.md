@@ -51,6 +51,7 @@ projeto/
 ├── venv/
 ├── .env
 ├── .gitignore
+├── db.sqlite3
 ├── LICENSE
 ├── manage.py
 ├── README.md
